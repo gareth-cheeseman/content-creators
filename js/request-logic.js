@@ -2,7 +2,25 @@
 // extension off of the supplied filename, but we can't figure out the rest of
 // the function to use it! We hope this is useful to you!
 
-
 function getContentType(filename) {
   const extension = filename.match(/.*\.([^\.]*)$/)[1];
+  let returnValue;
+
+  switch (extension) {
+    case 'html':
+      returnValue = 'text/html';
+      break;
+    case 'css':
+      returnValue = 'text/css';
+      break;
+    case 'jpeg':
+      returnValue = 'image/jpeg';
+      break;
+    case 'jpg':
+      returnValue = 'image/jpeg';
+      break;
+    default:
+      returnValue = 'text/plain';
+  }
+  return returnValue;
 }
